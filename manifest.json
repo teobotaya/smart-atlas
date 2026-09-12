@@ -1,0 +1,10 @@
+{
+  "id": "smart-atlas",
+  "name": "Smart Atlas",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "Mapa semántico interactivo, explorador de búsqueda y clustering para bóvedas con Smart Connections. Degrada a un índice TF-IDF local si Smart Connections no está instalado.",
+  "author": "Teo Matías Botaya",
+  "authorUrl": "https://github.com/teobotaya",
+  "isDesktopOnly": false
+}

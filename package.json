@@ -1,0 +1,21 @@
+{
+  "name": "smart-atlas",
+  "version": "1.0.0",
+  "description": "Semantic atlas, explorer and clustering layer for Obsidian vaults powered by Smart Connections.",
+  "main": "main.js",
+  "license": "MIT",
+  "author": "Teo Matías Botaya",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc --noEmit --skipLibCheck && node esbuild.config.mjs production",
+    "typecheck": "tsc --noEmit --skipLibCheck"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "builtin-modules": "^3.3.0",
+    "esbuild": "^0.23.0",
+    "obsidian": "^1.7.2",
+    "tslib": "^2.6.3",
+    "typescript": "^5.4.5"
+  }
+}
