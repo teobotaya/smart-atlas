@@ -141,7 +141,9 @@ export class AtlasView extends ItemView {
 
   private size(): { w: number; h: number } {
     const r = this.canvas.getBoundingClientRect();
-    return { w: Math.max(320, r.width), h: Math.max(280, r.height) };
+    /* Sin piso artificial: con un piso de 320 en un panel mas angosto los
+       nodos quedaban fuera del area visible y el mapa se veia vacio. */
+    return { w: Math.max(160, r.width), h: Math.max(160, r.height) };
   }
 
   async refresh(force = false): Promise<void> {
@@ -217,7 +219,8 @@ export class AtlasView extends ItemView {
   private layout(): void {
     if (this.points.length < 2) return;
     const { w, h } = this.size();
-    const spread = relax(this.xy.map(([x, y]) => [x * 1000, y * 1000] as [number, number]), 70, 30);
+    const sep = Math.max(12, Math.min(30, w / 16));
+    const spread = relax(this.xy.map(([x, y]) => [x * 1000, y * 1000] as [number, number]), 70, sep);
     const placed = fitToBox(spread, w, h, 56);
     this.draw(placed);
   }
